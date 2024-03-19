@@ -161,7 +161,7 @@ def break_ties_two(
                 # quotechar has an effect
                 return d_yes
     elif _dialects_only_differ_in_field(A, B, "delimiter"):
-        if set([A.delimiter, B.delimiter]) == set([",", " "]):
+        if {A.delimiter, B.delimiter} == {",", " "}:
             # Artifact due to type detection (comma as radix point)
             if A.delimiter == ",":
                 return A

@@ -16,9 +16,7 @@ from typing import Optional
 from typing import Set
 
 #: Set of default characters to *never* consider as escape character
-DEFAULT_BLOCK_CHARS: Set[str] = set(
-    [
-        "!",
+DEFAULT_BLOCK_CHARS: Set[str] = {"!",
         "?",
         '"',
         "'",
@@ -29,9 +27,7 @@ DEFAULT_BLOCK_CHARS: Set[str] = set(
         "%",
         "*",
         "&",
-        "#",
-    ]
-)
+        "#",}
 
 #: Set of characters in the Unicode "Po" category
 UNICODE_PO_CHARS: Set[str] = set(
@@ -71,7 +67,7 @@ def is_potential_escapechar(
         Whether the character is considered a potential escape or not.
 
     """
-    if encoding.lower() in set(["utf-8", "ascii"]):
+    if encoding.lower() in {"utf-8", "ascii"}:
         uchar = char
     else:
         uchar = codecs.decode(bytes(char, encoding), encoding=encoding)

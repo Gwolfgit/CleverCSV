@@ -74,7 +74,7 @@ def get_dialects(
     escapechars = {}
 
     for delim, quotechar in itertools.product(delims, quotechars):
-        escapechars[(delim, quotechar)] = set([""])
+        escapechars[(delim, quotechar)] = {""}
 
     is_escapechar_cache: Dict[str, bool] = {}
 

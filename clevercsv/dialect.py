@@ -77,7 +77,7 @@ class SimpleDialect:
                 "Escapechar should be zero or one characters, got: %r"
                 % self.escapechar
             )
-        if self.strict not in set([False, True]):
+        if self.strict not in {False, True}:
             raise ValueError(
                 "Strict should be True or False, got: %r" % self.strict
             )

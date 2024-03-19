@@ -64,7 +64,7 @@ def is_potential_escapechar(char, encoding):
 
 def get_quotechar_options(data):
     if data is None:
-        return set(["q", "a", "b", "t", "n"])
+        return {"q", "a", "b", "t", "n"}
     options = set()
     for x in data:
         if x == '"':
@@ -95,7 +95,7 @@ def pairwise(iterable):
 
 def get_escapechar_options(data, encoding, delim, quotechar):
     if data is None or encoding is None:
-        return set(["\\"])
+        return {"\\"}
     escapes = set()
     for u, v in pairwise(data):
         if not is_potential_escapechar(u, encoding):
