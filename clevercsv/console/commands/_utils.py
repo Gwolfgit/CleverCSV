@@ -40,7 +40,7 @@ def generate_code(
         return [
             *base,
             "",
-            f'df = clevercsv.read_dataframe("{filename}", delimiter={d}, '
+            f'df = clevercsv.read_dataframe("{filename}", delimiter={d}, ',
             f"quotechar={q}, escapechar={e})",
             "",
         ]
