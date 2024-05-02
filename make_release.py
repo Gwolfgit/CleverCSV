@@ -186,7 +186,7 @@ class RemoveVenv(Step):
 class GitTagVersion(Step):
     def action(self, context):
         self.do_cmd(
-            f"git tag -s "
+            "git tag -s "
             f"-m \"CleverCSV Release v{context['version']}\" "
             f"v{context['version']}"
         )
@@ -196,7 +196,7 @@ class GitTagPreRelease(Step):
     def action(self, context):
         self.instruct("Tag version as a pre-release (increment as needed)")
         self.print_run(
-            f"git tag -s "
+            "git tag -s "
             f"-m \"CleverCSV Release v{context['version']} "
             f"(release candidate 1)\" v{context['version']}-rc.1"
         )
